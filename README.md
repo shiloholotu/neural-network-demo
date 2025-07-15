@@ -6,4 +6,4 @@ This project mostly serves to wet my toes with machine learning. Specifically, t
 Users can draw on a 10x10 canvas with 2 colors. Then, the model uses that canvas to train, taking in x and y coordinates and predicting what color the pixel at that location should be based on the user's example.
 
 ## Model Specfics
-The core is a basic feed-forward neural network with 2 inputs (the coordinates) and 2 outputs (the 2 possible colors), and the user can adjust the size and number of hidden layers. There are only 100 possible training examples, so the model trains on the entire batch each epoch. I used the sigmoid function for all the activations, used MSE as my cost function, and used Xavier initialization for randomizing weights. 
+The core is a basic feed-forward neural network with 2 inputs (the coordinates) and 2 outputs (the 2 possible colors), and the user can adjust the size and number of hidden layers. There are only 100 possible training examples, so stochastic gradient descent felt more appropriate than using batches. I used the sigmoid function for all the activations, used MSE as my cost function, and used Xavier initialization for randomizing weights. 
