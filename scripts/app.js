@@ -147,7 +147,7 @@ function resetModel(keepProgress=false){
         }
     }
 
-    if(keepProgress) togglePlay();
+    togglePlay();
 
     
 }
