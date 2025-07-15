@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:400,600,800" rel="stylesheet">
+
+        <!-- our stylesheet-->
+        <link rel="stylesheet" href="styles/main.css">
+        
+        <title>Web App Template | Shiloh Olotu</title>
+         
+    </head>
+    
+    <body>
+
+        <h1 style="font-weight: 600;text-align: center;">neural network demo🤖</h1>
+
+        <p class="info-blurb"><i>Hello👋</i>! This is a small demo for a neural network written completely in vanilla javascript. I just finished my senior year of high school, so I think I know just enough multivariable calculus to get this working. 
+            Below is the canvas, where you can draw pixels of 2 colors. Each colored pixel will be fed to the neural network as training data.</p><br><br>
+
+        <div id = "input-graph">
+        </div>
+
+        <br>
+
+        <div id="palette">
+            <div id="draw-mode0" style="background:var(--font-color)" onclick="setDrawMode(0)"></div>
+            <div id="draw-mode1" style="background:var(--pretty-blue)" onclick="setDrawMode(1)"></div>
+            <img id="draw-mode2" style="background:var(--light-transp-blue)" onclick="setDrawMode(2)" src="assets/eraser.svg">
+        </div>
+        <p id="fill-all-button" onclick="fillAll()">Fill all</p>
+
+
+        <br><br>
+        <p class="info-blurb">This is the models's output. Each pixel is a representation of the model's guess of what color should be there, 
+            based on the example you provided above.</p><br><br>
+        
+        
+        
+        <div id="output-graph">
+        </div>
+
+        <div class="model-configs">
+            <p>Iterations per frame</p>
+            <input id="epf" type="number" value="10" oninput="updateEpochPerFrame()">
+            <button id="play-button" onclick="togglePlay()">Play</button>
+            <button onclick="resetModel()">Restart</button>
+        </div>
+
+        <br><br><p class="info-blurb">This is a graph of the model's loss function, which represents how poorly the model can fit the provided data (0 = good, 1 = sucks).</p><br><br>
+
+        
+        
+        <div style="width: 400px;margin:auto"><canvas id="myChart"></canvas></div>
+
+        <br><br><p class="info-blurb">These are configurations for the model. Tweak as you please (Too big models can crash the browser!)</p><br>
+
+        <div class="model-configs">
+            <p># of hidden layers</p>
+            <input id="hl-count" type="number" value="2">
+            <p>Neurons per hidden layer</p>
+            <input id="hl-size" type="number" value="3">
+            <p>Learning rate</p>
+            <input id="learning-rate" type="number" step="any" value=".1">
+
+            <button onclick="resetModel(true)">Initialize model</button>
+
+        </div>
+
+        <br><br><br><br>
+          
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="scripts/neural-network.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/graph.js"></script>
+        
+    </body>
+    
+</html>
