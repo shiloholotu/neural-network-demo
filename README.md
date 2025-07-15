@@ -1,5 +1,5 @@
 # A small neural network demo🤖
-An online demo of a neural network built from scratch in JavaScript.
+An [online demo](https://shiloholotu.github.io/neural-network-demo/) of a neural network built from scratch in JavaScript.
 
 This project mostly serves to wet my toes with machine learning. Specifically, the ***very, very scary*** concept of gradient descent. After many YouTube videos and my high school multivariable calculus class, I've learned enough to scrap together this fun little demo. 
 
