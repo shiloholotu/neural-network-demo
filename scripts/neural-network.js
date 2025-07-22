@@ -51,10 +51,10 @@ class MultiplyNeuron{
         for(let i of this.connections){
             this.d += i.backProp();
         }
-
+        const ret = this.w * this.d;
         this.w -= this.step * this.d * this.value;
 
-        return this.w * this.d;
+        return ret;
         
     }
 }
@@ -81,7 +81,6 @@ class AddNeuron{
         for(let i of this.connections){
             this.d += i.backProp();
         }
-
         this.bias -= this.step * this.d;
 
         return this.d;
